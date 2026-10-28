@@ -1,5 +1,6 @@
 # NovelOverlay · 无边框透明悬浮小说阅读器
 
+[![release](https://img.shields.io/github/v/release/simon12244/NovelOverlay?color=success)](https://github.com/simon12244/NovelOverlay/releases/latest)
 [![build](https://github.com/simon12244/NovelOverlay/actions/workflows/build.yml/badge.svg)](https://github.com/simon12244/NovelOverlay/actions/workflows/build.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Windows%207%20%2F%208%20%2F%2010%20%2F%2011-lightgrey.svg)](#)
@@ -7,7 +8,7 @@
 
 一个只为「边看小说边干别的事」而生的极简阅读器。**没有窗口、没有边框、没有底色**——屏幕上只有字，字的颜色会自己跟着背后的画面调，平时完全隐身，鼠标划过去才浮现，移开又消失。
 
-- 单文件 exe，约 120 KB，无安装、无依赖、无后台服务
+- 单文件 exe，约 65 KB，无安装、无依赖、无后台服务
 - 兼容 Windows 7 SP1 / 8 / 10 / 11（需 .NET Framework 4.0+）
 - 支持 `txt` / `epub` / `mobi` / `azw` / `azw3`（未压缩或 PalmDOC 压缩）/ `html`
 
@@ -15,11 +16,21 @@
 
 ## 一、开始使用
 
-1. 双击 **`build.bat`** —— 它会用系统自带的 .NET 编译器生成 `NovelOverlay.exe` 并自动启动。
-   （首次运行如果提示找不到编译器，装一下 [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework) 即可）
-2. 窗口默认贴在**屏幕右侧**，尺寸 330×240，此时它是**逐像素透明**的 —— 只有字，没有底板。把鼠标移到那块区域，文字就会浮现。
-3. **右键** → `打开文件…`，选一本小说。也可以把书拖到 `NovelOverlay.exe` 图标上，或命令行 `NovelOverlay.exe 书名.txt`。
-4. 之后每次启动自动接着上次的书、上次的章节和位置。
+**方式 A · 直接下载（推荐，不用装开发环境）**
+
+到 [**Releases**](https://github.com/simon12244/NovelOverlay/releases/latest) 下载 `NovelOverlay.exe`（65 KB，免安装），双击就能用。
+需要 .NET Framework 4.0+；Win7 如果没装过，装一下 [4.8](https://dotnet.microsoft.com/download/dotnet-framework) 即可。
+
+**方式 B · 自己编译**
+
+双击 **`build.bat`** —— 它会用系统自带的 .NET 编译器生成 `NovelOverlay.exe` 并自动启动。
+（提示找不到编译器，同样是装 [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework)）
+
+**第一次打开之后：**
+
+1. 窗口默认贴在**屏幕右侧**，尺寸 330×240，此时它是**逐像素透明**的 —— 只有字，没有底板。把鼠标移到那块区域，文字就会浮现。
+2. **右键** → `打开文件…`，选一本小说。也可以把书拖到 `NovelOverlay.exe` 图标上，或命令行 `NovelOverlay.exe 书名.txt`。
+3. 之后每次启动自动接着上次的书、上次的章节和位置。
 
 > 找不到窗口了？鼠标在屏幕右侧上下扫一下；或右键 → `窗口尺寸` → `重置到屏幕右侧`。
 
