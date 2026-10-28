@@ -1,0 +1,30 @@
+# ---- 编译产物 ----
+*.exe
+*.pdb
+*.dll
+*.obj
+bin/
+obj/
+Release/
+Debug/
+
+# ---- 本地配置（含个人阅读进度，不应入库）----
+settings.ini
+error.log
+
+# ---- 编辑器 / IDE ----
+.vs/
+.idea/
+*.user
+*.suo
+*.cache
+
+# ---- 系统 ----
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- 工具缓存 ----
+.workbuddy/
+__pycache__/
+*.pyc

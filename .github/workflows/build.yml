@@ -1,0 +1,37 @@
+name: build
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build (C# / .NET Framework 4.0)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile with csc
+        shell: cmd
+        run: |
+          set "CSC=%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
+          if not exist "%CSC%" set "CSC=%WINDIR%\Microsoft.NET\Framework\v4.0.30319\csc.exe"
+          if not exist "%CSC%" (
+            echo csc.exe not found & exit /b 1
+          )
+          "%CSC%" /nologo /target:winexe /platform:anycpu /optimize+ ^
+            /out:NovelOverlay.exe ^
+            /reference:System.dll /reference:System.Drawing.dll /reference:System.Windows.Forms.dll ^
+            src\Program.cs src\Settings.cs src\Formats.cs src\Overlay.cs src\ReaderView.cs src\MainForm.cs
+          if errorlevel 1 exit /b 1
+          dir NovelOverlay.exe
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NovelOverlay-${{ github.sha }}
+          path: NovelOverlay.exe
+          if-no-files-found: error

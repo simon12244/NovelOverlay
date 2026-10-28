@@ -1,0 +1,11 @@
+# 统一换行符，避免跨平台整文件 diff
+* text=auto
+
+*.cs    text eol=crlf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.py    text eol=lf
+LICENSE text eol=lf
+
+# build.bat 是 GBK 编码，禁止任何编码/换行转换
+build.bat binary
